@@ -103,6 +103,12 @@
                                     @endforeach
                                 </select>
                             </div>
+
+                            <div class="form-group">
+                                <label for="group_id">{{ __('voyager::generic.group_id') }}</label>
+                                <input type="group_id" class="form-control" id="group_id" name="group_id" placeholder="{{ __('voyager::generic.group_id') }}"
+                                       value="@if(isset($dataTypeContent->group_id)){{ $dataTypeContent->group_id }}@endif">
+                            </div>
                         </div>
                     </div>
                 </div>
