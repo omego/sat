@@ -9,7 +9,7 @@
 @section('page_header')
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i>
-        {{ __('voyager::generic.'.(!is_null($dataTypeContent->getKey()) ? 'edit' : 'add')).' '.$dataType->display_name_singular }}
+        {{ __('voyager::generic.'.(!is_null($dataTypeContent->getKey()) ? 'edit' : 'add')).' '.$dataType->display_name_singular ." ". $dataTypeContent->group_number . " For Batch " . $dataTypeContent->batch_id}}
     </h1>
     @include('voyager::multilingual.language-selector')
 @stop
@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="batch_id">{{ __('voyager::generic.batch_id') }}</label>
+                                <label for="batch_id">{{ $dataTypeContent->batch_id }}</label>
                                 <select class="form-control select2" id="batch_id" name="batch_id">
                                   @foreach ($groups as $group)
                                   <option value="{{ $group->batch_id }}"
